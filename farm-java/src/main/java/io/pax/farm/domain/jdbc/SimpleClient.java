@@ -23,4 +23,9 @@ public class SimpleClient implements Client {
     public String getMail() {
         return this.mail;
     }
+
+    @Override
+    public String toString() {
+        return this.mail;
+    }
 }
