@@ -57,12 +57,26 @@ public class ProductDao {
 
         return id;
     }
+    public void deleteProduct(int productId) throws SQLException {
 
+        String query = "DELETE  FROM product WHERE id=?";
+        //System.out.println(query);
+
+
+        Connection conn = this.connector.getConnection();
+        PreparedStatement statement = conn.prepareStatement(query);
+        statement.setInt(1,productId);
+        statement.executeUpdate();
+        statement.close();
+        conn.close();
+
+    }
 
     public static void main(String[] args) throws SQLException {
        ProductDao dao = new ProductDao();
         System.out.println(dao.listProducts());
         dao.createProduct("milk", 15, 1);
+        //dao.deleteProduct(4);
 
     }
 }
