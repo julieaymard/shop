@@ -17,7 +17,7 @@ import java.util.List;
 public class ClientWs {
 
     @GET
-    public List<Client> getUsers() throws SQLException {
+    public List<Client> getClients() throws SQLException {
         ClientDao dao = new ClientDao();
         return dao.listClients();
     }
