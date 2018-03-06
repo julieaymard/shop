@@ -1,0 +1,32 @@
+<!--<p>-->
+  <!--user-list-view works!-->
+<!--</p>-->
+
+  <div id="clients">
+    <h3> Client's login</h3>
+    <ul>
+      <li *ngFor="let client of clients">
+        <a href="#{{client.id}}" (click)="details(client)">{{client.mail}}</a>
+    <!--<input type="text" name="clientMail" placeholder="enter your email" [(ngModel)]="existedClient.mail">-->
+        <!--<button (click)="existingClient()" [disabled]="existedClient.mail?.length<2" > ok!</button>-->
+      </li>
+    </ul>
+  </div>
+
+
+  <div *ngIf="selectedClient">
+    <h3> All products available</h3>
+
+    <ol>
+      <li *ngFor="let product of products"> {{product.name}}</li>
+    </ol>
+</div>
+
+<div>
+  <h3>Contact</h3>
+
+  <img href="C:\Users\AELION\Desktop\Projet Final" height="56" width="135"/>
+  <br>
+  <a href="https://www.aelion.fr/" target="_blank">
+  95 Chemin de Gabardie <br> 31200 Toulouse <br> 05 61 49 42 60 </a>
+</div>
