@@ -6,4 +6,5 @@ export class Date {
   open: string;
   close: string;
 
+
 }

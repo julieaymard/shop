@@ -7,15 +7,17 @@ import { UserListViewComponent } from './user-list-view/user-list-view.component
 import {Dataservice} from "./data-service.service";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { FarmerListViewComponent } from './farmer-list-view/farmer-list-view.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListViewComponent
+    UserListViewComponent,
+    FarmerListViewComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, FormsModule
+    BrowserModule, HttpClientModule, FormsModule,
   ],
   providers: [Dataservice],
   bootstrap: [AppComponent]

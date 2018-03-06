@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Client} from "../model/client";
 import {Dataservice} from "../data-service.service";
 import {Product} from "../model/products";
+import {Date} from "../model/dates";
 
 @Component({
   selector: 'app-user-list-view',
