@@ -3,10 +3,7 @@ package io.pax.farm.ws;
 import io.pax.farm.dao.ClientDao;
 import io.pax.farm.domain.Client;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.SQLException;
 import java.util.List;
@@ -20,5 +17,11 @@ public class ClientWs {
     public List<Client> getClients() throws SQLException {
         ClientDao dao = new ClientDao();
         return dao.listClients();
+    }
+
+    @GET
+    @Path("{id}") //this is a pathparam
+    public Client getClient(@PathParam("id") int client_id) throws SQLException {
+        return new ClientDao().findClientWithCommends(client_id);
     }
 }
