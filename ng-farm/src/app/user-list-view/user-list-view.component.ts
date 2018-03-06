@@ -12,6 +12,7 @@ export class UserListViewComponent implements OnInit {
   clients: Client[];
   selectedClient: Client;
   products : Product[];
+  dates : Date[];
 
   constructor(public dataService: Dataservice) {
     dataService.fetchClients()
@@ -21,6 +22,10 @@ export class UserListViewComponent implements OnInit {
     dataService.fetchProducts()
       .then(products => this.products = products)
       .then(products => console.log('Products:', products));
+
+    dataService.fetchDates()
+      .then(dates => this.dates = dates)
+      .then(dates => console.log('Dates:', dates));
   }
 
   ngOnInit() {

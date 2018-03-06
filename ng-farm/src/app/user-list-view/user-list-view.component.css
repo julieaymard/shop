@@ -1,6 +1,17 @@
 
 
-ul {
-  list-style: circle;
-  background-color: lightgrey;
+
+a{
+  text-decoration: none ;
+  color : black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: black;
+  background-color: darkseagreen;
 }
