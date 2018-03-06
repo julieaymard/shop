@@ -70,6 +70,8 @@ public class ClientDao {
 
         return client;
     }
+
+
     public static void main(String[] args) throws SQLException {
         ClientDao dao = new ClientDao();
        dao.findClientWithCommends(1);
