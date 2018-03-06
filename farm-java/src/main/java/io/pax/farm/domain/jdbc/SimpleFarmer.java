@@ -1,10 +1,15 @@
 package io.pax.farm.domain.jdbc;
 
 import io.pax.farm.domain.Farmer;
+import io.pax.farm.domain.Product;
+
+import java.util.List;
 
 public class SimpleFarmer implements Farmer {
     int id;
     String name;
+
+    List<Product> products;
 
     public SimpleFarmer() {
     }
@@ -14,6 +19,11 @@ public class SimpleFarmer implements Farmer {
         this.name = name;
     }
 
+    public SimpleFarmer(int id, String name, List<Product> products) {
+        this.id = id;
+        this.name = name;
+        this.products = products;
+    }
 
     @Override
     public int getId() {
@@ -28,5 +38,9 @@ public class SimpleFarmer implements Farmer {
     @Override
     public String toString() {
         return this.name;
+    }
+
+    public List<Product> getProducts() {
+        return products;
     }
 }
