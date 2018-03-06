@@ -14,6 +14,7 @@ export class UserListViewComponent implements OnInit {
   selectedClient: Client;
   products : Product[];
   dates : Date[];
+  selectedDate : Date;
 
   constructor(public dataService: Dataservice) {
     dataService.fetchClients()

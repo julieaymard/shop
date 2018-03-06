@@ -1,6 +1,4 @@
 
-
-
 a{
   text-decoration: none ;
   color : black;
@@ -14,4 +12,53 @@ a:hover, a:focus, a:active {
   text-decoration: none;
   color: black;
   background-color: darkseagreen;
+}
+
+
+h1, h4{
+  font-variant: small-caps;
+
+  text-decoration: underline ;
+}
+
+h1{
+  text-align: center;
+}
+
+
+#contact {
+  text-align: center;
+  font-size: 15px;
+  color: black;
+}
+
+ul{
+  list-style: none;
+}
+ol{
+  list-style: none;
+}
+
+#basket{
+  alignment: right;
+}
+
+button {
+  background-color :lightgray;
+  border-radius: 12px;
+}
+
+button:hover {
+  background-color: antiquewhite;
+}
+
+select{
+  border-radius: 4px;
+
+}
+
+#products h3 {
+  text-align: center;
+  border: groove;
+  border-color: red;
 }
