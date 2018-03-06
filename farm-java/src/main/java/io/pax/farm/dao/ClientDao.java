@@ -63,7 +63,6 @@ public class ClientDao {
                 products.add(product);
                 System.out.println(products);
             }
-
         }
         set.close();
         statement.close();
