@@ -3,16 +3,21 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { UserListViewComponent } from './user-list-view/user-list-view.component';
+import {Dataservice} from "./data-service.service";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserListViewComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule, FormsModule
   ],
-  providers: [],
+  providers: [Dataservice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
