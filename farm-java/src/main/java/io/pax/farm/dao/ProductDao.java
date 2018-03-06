@@ -36,7 +36,6 @@ public class ProductDao {
     }
 
 
-
     public static void main(String[] args) throws SQLException {
        ProductDao dao = new ProductDao();
         System.out.println(dao.listProducts());
