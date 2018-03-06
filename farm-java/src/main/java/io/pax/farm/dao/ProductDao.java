@@ -35,11 +35,34 @@ public class ProductDao {
         return products;
     }
 
+    public int createProduct(String name, int price, int farmer_id) throws SQLException {
+        String query = "INSERT INTO product (name, price, farmer_id) VALUES (?,?,?)";
+        System.out.println(query);
+
+        Connection conn = this.connector.getConnection();
+        PreparedStatement statement = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+        statement.setString(1, name);
+        statement.setInt(2, price);
+        statement.setInt(3, farmer_id);
+
+        statement.executeUpdate();
+
+        ResultSet keys = statement.getGeneratedKeys();
+        keys.next();
+
+        int id = keys.getInt(1);
+
+        statement.close();
+        conn.close();
+
+        return id;
+    }
+
 
     public static void main(String[] args) throws SQLException {
        ProductDao dao = new ProductDao();
         System.out.println(dao.listProducts());
-       // dao.createProduct("")
+        dao.createProduct("milk", 15, 1);
 
     }
 }
