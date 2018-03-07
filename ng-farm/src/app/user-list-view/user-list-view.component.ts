@@ -14,7 +14,8 @@ export class UserListViewComponent implements OnInit {
   clients: Client[] = [];
   selectedClient: Client;
   products: Product[] = [];
-  dates: Date[]; // !!!!!!!!!!!!!!!!!
+  dates: Date[] =[]; // !!!!!!!!!!!!!!!!!
+  selectedDate : Date;
   options: CheckProduct[] = [];
   selectedProducts : Product;
 

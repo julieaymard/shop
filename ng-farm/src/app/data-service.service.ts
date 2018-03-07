@@ -36,4 +36,20 @@ export class Dataservice {
   }
 
 
+  ////////
+  addToCart(product: Product) {
+    let url = ('http://localhost:8080/farm-java/api/commend')
+    let dto = {
+      product_id: product.id,
+
+    };
+
+    console.log('sending user:', dto);
+
+    return this.http.post(url, dto)
+      .toPromise()
+      .then(data => console.log('Success :)', data))
+
+
+  }
 }
