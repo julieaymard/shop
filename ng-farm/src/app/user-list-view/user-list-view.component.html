@@ -16,22 +16,31 @@
   </div>
 
 
-
   <div id="products" *ngIf="selectedClient">
 
        <h3> All products available</h3> <img src="http://www.mypanier.fr/bundles/ecommerce/images/friseLegumes.png" height="50" width="200"/>
 
-    <ol>
-      <li *ngFor="let product of products"> {{product.name}}</li>
-    </ol>
-    <button > <img src="https://www.dreamboxsireland.com/wp-content/uploads/2016/03/Process-Order-when-Items-are-Out-of-Stock.png" height="40" width="40"/> </button>
+      <div *ngFor = "let o of options">
+        <input  type = "checkbox"
+                name = "options"
+                value = "{{o.product}}"
+                [(ngModel)] = "o.checked"
+              (click)="displayOptions()"/>
+        {{o?.product.name}}
+      </div>
 
+    <button (click) = "selectedOptions()" type="button">
+      <img src="https://www.dreamboxsireland.com/wp-content/uploads/2016/03/Process-Order-when-Items-are-Out-of-Stock.png" height="40" width="40"/>
+    </button>
+
+    <hr>
 
     <h3> Choose a date </h3>
     <ol>
       <li *ngFor="let date of dates"> {{date.day}} : {{date.open}} - {{date.close}}</li>
     </ol>
   </div>
+
 
 <div>
   <h3>Contact</h3>
@@ -40,4 +49,10 @@
   <br>
   <a href="https://www.aelion.fr/" target="_blank">
   95 Chemin de Gabardie <br> 31200 Toulouse <br> 05 61 49 42 60 </a>
+</div>
+
+<div *ngIf = "selectedProduct">
+  <h3>liste de produits</h3>
+
+
 </div>
