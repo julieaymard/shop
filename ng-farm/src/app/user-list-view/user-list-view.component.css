@@ -30,6 +30,7 @@ h1{
   text-align: center;
   font-size: 15px;
   color: black;
+
 }
 
 ul{
@@ -37,15 +38,14 @@ ul{
 }
 ol{
   list-style: none;
+  column-count: 8;
 }
 
-#basket{
-  alignment: right;
-}
 
 button {
   background-color :lightgray;
   border-radius: 12px;
+  position: center;
 }
 
 button:hover {
@@ -56,9 +56,10 @@ select{
   border-radius: 4px;
 
 }
-
-#products h3 {
+ h3 {
   text-align: center;
   border: groove;
   border-color: red;
 }
+
+
