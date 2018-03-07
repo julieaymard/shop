@@ -12,9 +12,11 @@ import {Date} from "../model/dates";
 export class UserListViewComponent implements OnInit {
   clients: Client[];
   selectedClient: Client;
-  products : Product[];
-  dates : Date[];
+  products : Product[] = [];
+  dates : Date[] = [];
   selectedDate : Date;
+  selectedProduct : Product;
+
 
   constructor(public dataService: Dataservice) {
     dataService.fetchClients()
@@ -40,5 +42,12 @@ export class UserListViewComponent implements OnInit {
     console.log('You selected', client);
 
       }
+
+///////////////
+  AddToCart(){
+    this.dataService.addToCart(this.selectedProduct)
+      .then ( ()=> this.products.push(Object.assign({}, this.selectedProduct)))
+      .catch(e=> alert(e.message));
+  }
 
 }
