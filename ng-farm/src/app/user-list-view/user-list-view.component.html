@@ -2,14 +2,21 @@
 <h1>Client Access</h1>
 
 
-  <div id="clients">
-    <!--<h3> Client's login</h3>-->
-   Select your email <br>
-    <select [(ngModel)]="selectedClient" name="Clients">
-      <option selected = "selected">Clients</option>
-      <option *ngFor = "let client of clients"> {{client.mail}}</option>
-    </select>
-  </div>
+  <!--<div id="clients">-->
+    <!--&lt;!&ndash;<h3> Client's login</h3>&ndash;&gt;-->
+   <!--Select your email <br>-->
+    <!--<select [(ngModel)]="selectedClient" name="Clients">-->
+      <!--<option selected = "selected">Clients</option>-->
+      <!--<option *ngFor = "let client of clients"> {{client.mail}}</option>-->
+    <!--</select>-->
+  <!--</div>-->
+
+<label for="clients">Enter your email address </label>
+<input list="clients" type="text" id="clients_mail">
+<datalist id="clients">
+  <option *ngFor = "let client of clients"> {{client.mail}}</option>
+
+</datalist>
 
 
   <!--<div id="products" *ngIf="selectedClient">-->
@@ -51,7 +58,8 @@
       <li *ngFor="let product of products"> {{product.name}}</li>
     </ol>
     <button id="basket" > Order now </button>
-
+<br>
+<br>
     <!--</div>-->
 <h2> Pick a date </h2>
 <select [(ngModel)]="selectedDate" name="level">
@@ -70,7 +78,7 @@
 
 <div id="contact">
   <h2>Contact</h2>
-  <a href="http://www.farmstores.com/locations/" target="_blank"><img src="http://www.shantee.net/wp-content/uploads/2016/06/google-maps.jpg" height="80" width="120"/></a>
+  <a href="http://www.farmstores.com/locations/" target="_blank"><img src="http://www.shantee.net/wp-content/uploads/2016/06/google-maps.jpg" height="100" width="140"/></a>
   <br>
   <a href="http://www.farmstores.com/locations/" target="_blank">
     Address </a>
@@ -120,3 +128,5 @@
 
 </marquee>
 </div>
+
+
