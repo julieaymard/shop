@@ -33,14 +33,11 @@ h1{
 
 }
 
-ul{
-  list-style: none;
-}
-ol{
+
+ul {
   list-style: none;
   column-count: 7;
 }
-
 
 button {
   background-color :lightgray;
@@ -70,4 +67,7 @@ select{
 
 #basket{
  float:right;
+}
+#courses{
+  display: inline-block;
 }
