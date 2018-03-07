@@ -35,7 +35,7 @@
 
     <h3>liste de produits</h3>
         <ul>
-          <li *ngFor = "let product of options"> {{options.name}}  </li>
+          <li *ngFor = "let product of selectedOptions()"> {{product.name}}  </li>
         </ul>
     <hr>
 
