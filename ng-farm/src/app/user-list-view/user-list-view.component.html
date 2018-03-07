@@ -33,7 +33,12 @@
       <img src="https://www.dreamboxsireland.com/wp-content/uploads/2016/03/Process-Order-when-Items-are-Out-of-Stock.png" height="40" width="40"/>
     </button>
 
+    <h3>liste de produits</h3>
+        <ul>
+          <li *ngFor = "let product of options"> {{options.name}}  </li>
+        </ul>
     <hr>
+
 
     <h3> Choose a date </h3>
     <ol>
@@ -51,8 +56,7 @@
   95 Chemin de Gabardie <br> 31200 Toulouse <br> 05 61 49 42 60 </a>
 </div>
 
-<div *ngIf = "selectedProduct">
-  <h3>liste de produits</h3>
 
 
-</div>
+
+
