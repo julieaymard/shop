@@ -71,3 +71,7 @@ select{
 #courses{
   display: inline-block;
 }
+
+html{
+  background: linear-gradient(rgba(114,169,100,.6), rgba(255,255,255,.6));
+}
