@@ -63,3 +63,15 @@ button:hover {
   background-color: antiquewhite;
 }
 
+#products {
+  column-count: 4;
+}
+
+#minus{
+  background-color : red;
+  color: black;
+}
+
+#plus{
+  color: black;
+}

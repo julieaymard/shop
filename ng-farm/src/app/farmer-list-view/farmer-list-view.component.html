@@ -52,12 +52,19 @@ This is your command of the week :
 
 <h3> Your Products </h3>
 <div id="products">
+  <!--<table>-->
+    <!--<tr *ngFor="let product of products">-->
+      <!--<td> {{product.name}}</td>-->
+      <!--<td> $ {{product.price}} </td>-->
+    <!--</tr>-->
+  <!--</table>-->
   <table>
     <tr *ngFor="let product of products">
-      <td> {{product.name}}</td>
-      <td> $ {{product.price}} </td>
+      <td> {{product.name}} ${{product.price}}</td>
+      <td> <button id="minus" (click)="deleteProduct()" [disabled]="createdProduct.name?.length<2"> - </button> </td>
     </tr>
   </table>
+
 </div>
 <br>
 
@@ -67,8 +74,8 @@ Name*:
 Price*:
 <input type="number" name="productPrice" placeholder="enter a number" [(ngModel)]="createdProduct.price" required
        aria-required="true">
-<button (click)="createProduct()" [disabled]="createdProduct.name?.length<2"> +</button>
-<button (click)="deleteProduct()" [disabled]="createdProduct.name?.length<2"> -</button>
+<button id="plus" (click)="createProduct()" [disabled]="createdProduct.name?.length<2"> +</button>
+
 
 
 <h3> Your Availabilities </h3>
