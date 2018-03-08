@@ -115,4 +115,10 @@ export class UserListViewComponent implements OnInit {
 
   }
 
+  clickMethod(name: string) {
+    if(confirm("Would you like to onfirm your command")) {
+
+    }
+  }
+
 }
