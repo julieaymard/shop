@@ -1,6 +1,6 @@
-
-
-<body>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body ng-app="">
 
 
 <h1>Farmer Access <font color="red"> Restricted </font></h1>
@@ -8,22 +8,47 @@
 <h2 id="roland"> ~ Welcome <font color="#006400"> Roland </font> ~ </h2>
 
 <h3> Orders in Progress </h3>
-<div id="clients">
-  <table>
-    <th *ngFor="let client of clients">
-      <a href="#{{client.id}}" (click)="detailsC(client)"> {{client.mail}}
-      </a>
-    </th>
-    <tr>
-      <td *ngFor="let client of clients">
-        <input type="checkbox" id="SelectTask" name="OK" value="newsletter"> <label>Command OK</label>
-      </td>
-    </tr>
-  </table>
-  <ul *ngFor="let product of selectedClient?.products">
-    <li>{{product.name}} ({{product.price}} $/kg)</li>
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--<br>-->
+<!--<div>-->
+  <!--<button type="button" (click)="changeShowStatus()">show/hide</button>-->
+  <!--<div class="box" *ngIf="showHide">-->
+    <!--<p>some content</p>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<br>-->
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+This is your command of the week :
+<div id="command">
+
+  <div class="box" *ngIf="showHide">
+  <ul>
+    <li> client and pick-up date : {{pageService.data}} </li>
+    <li> products choosen: {{pageService.myProducts}}</li>
   </ul>
+    <button type="button" (click)="changeShowStatus()">Done</button>
+  </div>
+  <!--<input type="checkbox" id="SelectTask" name="OK" value="newsletter"> <label>is Done</label>-->
+
 </div>
+
+<!--<div id="clients">-->
+  <!--<table>-->
+    <!--<th *ngFor="let client of clients">-->
+      <!--<a href="#{{client.id}}" (click)="detailsC(client)"> {{client.mail}}-->
+      <!--</a>-->
+    <!--</th>-->
+    <!--<tr>-->
+      <!--<td *ngFor="let client of clients">-->
+        <!--<input type="checkbox" id="SelectTask" name="OK" value="newsletter"> <label>is Done</label>-->
+      <!--</td>-->
+    <!--</tr>-->
+  <!--</table>-->
+  <!--<ul *ngFor="let product of selectedClient?.products">-->
+    <!--<li>{{product.name}} ({{product.price}} $/kg)</li>-->
+  <!--</ul>-->
+<!--</div>-->
 
 <h3> Your Products </h3>
 <div id="products">
@@ -60,6 +85,11 @@ Price*:
   </ul>
 </div>
 <br>
+<!--<div *ngFor="let o of pageService.data">-->
+  <!--{{o.selectedDate}} :: {{o.selectedClient}}-->
+<!--</div>-->
+
+
 
 
 <!--Day*:-->
@@ -71,3 +101,4 @@ Price*:
 <!--<button (click)="createDate()" [disabled]="createdDate.day?.length<2"> + </button>-->
 <!--<button (click)="deleteDate()" [disabled]="createdDate.day?.length<4"> - </button>-->
 </body>
+</html>

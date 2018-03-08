@@ -14,11 +14,13 @@ import {PageService} from "../page.service";
 export class UserListViewComponent implements OnInit {
   clients: Client[] = [];
   selectedClient: Client;
+
   products: Product[] = [];
-  dates: Date[] =[]; // !!!!!!!!!!!!!!!!!
-  selectedDate : Date;
+  dates: Date[] = []; // !!!!!!!!!!!!!!!!!
+  selectedDate: Date;
   options: CheckProduct[] = [];
-  selectedProducts : Product;
+  selectedProducts: Product;
+
 
   constructor(public dataService: Dataservice, public pageService: PageService) {
     dataService.fetchClients()
@@ -37,7 +39,9 @@ export class UserListViewComponent implements OnInit {
       .then(dates => console.log('Dates:', dates));
 
 
-    pageService.data = 'I am some stupid data'
+    //pageService.data = 'I am some stupid data'
+    pageService.data = [];
+    pageService.myProducts = [];
   }
 
 
@@ -52,6 +56,12 @@ export class UserListViewComponent implements OnInit {
 
   }
 
+  details1(date: Date) {
+    this.selectedDate = date;
+
+    console.log('You selected', date);
+
+  }
 
   selectedOptions(): Product[] {
 
@@ -61,9 +71,21 @@ export class UserListViewComponent implements OnInit {
       .map(opt => opt.product);
 
     console.log(selectedProducts);
-    return selectedProducts;
+   // var p: Product[]=[];
 
-  }
+
+    for (let i = 0; i < selectedProducts.length; i++) {
+
+      console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ' + selectedProducts[i].name.length);
+      this.pageService.myProducts[i]  = selectedProducts[i].name;
+
+    }
+       this.pageService.data = [this.selectedClient, this.selectedDate];
+
+
+      return selectedProducts;
+    }
+
 
 
   displayOptions() {
@@ -73,16 +95,19 @@ export class UserListViewComponent implements OnInit {
   sum(): number {
     let total = 0;
 
+
     for (let i = 0; i < this.options.length; i++) {
 
       let product = this.options[i];
-      if(this.options[i].checked==true){
-        console.log("===>" +product);
-        total += product.product.price ;
+      if (this.options[i].checked == true) {
+        console.log("===>" + product);
+        total += product.product.price;
       }
     }
     console.log("===>" + total);
+    ///
 
+    ////////
     return total;
 
   }
