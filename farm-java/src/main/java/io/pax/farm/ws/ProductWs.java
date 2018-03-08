@@ -48,7 +48,7 @@ public class ProductWs {
     }
 
     @DELETE
-    @Path("/{id}")
+    @Path("{id}")
     //@Produces(MediaType.APPLICATION_XML)
     public int deleteProduct(@PathParam("id") int id) throws SQLException {
         ProductDao dao = new ProductDao();
