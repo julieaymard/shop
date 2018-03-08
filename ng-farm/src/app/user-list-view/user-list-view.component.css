@@ -33,7 +33,13 @@ h1{
 
 }
 ol {
-  list-style: none;
+  list-style: disc;
+  display:block;
+  padding-bottom: 5px;
+text-align: center;
+  padding-top: 15px;
+  margin: auto;
+
 }
 
 ul {
@@ -44,9 +50,20 @@ ul {
 button {
   background-color :rgba(114,169,100,.6);
   border-radius: 12px;
+
+}
+
+#validation{
   position: center;
   position: absolute;
   left: 46%;
+  text-align: center;
+}
+
+#toggle{
+  position: center;
+  position: absolute;
+  left:45%;
   text-align: center;
 }
 
@@ -90,9 +107,31 @@ table{
 }
 
 td {
-
   border-color: rgba(114,169,100,.6);
   width: 250px;
 }
 
 
+.valid {
+  background-image: url("https://www.verts-de-terre.fr/images/large-consigne-panier.png") no-repeat;
+  background-position : 15px 10px;
+  text-align:center;
+  color: black;
+  font-weight:bold;
+}
+
+#panier{
+  display: block;
+  margin: auto;
+}
+
+#bb {
+  text-align: center;
+  display: inline-block;
+  padding: 0 46%;
+}
+
+table li {
+  margin: auto;
+  list-style: none;
+}

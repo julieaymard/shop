@@ -47,3 +47,19 @@ a:hover, a:focus, a:active {
   background-color: darkseagreen;
 }
 
+
+
+button {
+  background-color :rgba(114,169,100,.6);
+  border-radius: 12px;
+}
+#farmer{
+  position: center;
+  position: absolute;
+  left:88%;
+  text-align: center;
+}
+button:hover {
+  background-color: antiquewhite;
+}
+
