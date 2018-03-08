@@ -70,17 +70,17 @@
 </div>
 </ul>
 
-<div>
+<div id="bb">
 <h2>Your Basket</h2>
 
-    <ol id="bb">
+    <ol >
       <li *ngFor = "let product of selectedOptions()"> {{product.name}} ${{product.price}} </li>
     </ol>
 
     <img id="panier" src="https://www.verts-de-terre.fr/images/large-consigne-panier.png" height="180" width="180"/>
     <br>
   <p class="valid">TOTAL : ${{sum()}}</p>
-</div>
+
 
 <h2> Pick a date </h2>
 
@@ -89,7 +89,7 @@
   <option *ngFor = "let date of dates"> {{date.day}} : {{date.open}} - {{date.close}}</option>
   </optgroup>
 </select>
-
+</div>
 
     <h2> Summary </h2>
     <div id="summary">
