@@ -6,8 +6,8 @@ export class PageService {
   page='client';
 
   data:any[]
-
   myProducts: any[]
+  myProductsPrice: any[]
 
   constructor() { }
 
