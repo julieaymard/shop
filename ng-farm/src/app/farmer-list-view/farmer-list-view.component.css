@@ -1,7 +1,8 @@
 body{
   text-align: center;
-  /*background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.6)), url("http://fr.web.img3.acsta.net/r_1280_720/pictures/14/01/29/17/16/162487.jpg");*/
-  background: linear-gradient(rgba(114,169,100,.6), rgba(255,255,255,.6));
+  /*background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.8)), url("http://media.rtl.fr/cache/dPQxan84RoUiD_QKDJDJDw/880v587-0/online/image/2017/0328/7787854006_un-undulatus-asperatus-un-nuage-d-une-nouvelle-forme.jpg");*/
+  /*background: linear-gradient(rgba(114,169,100,.6), rgba(255,255,255,.6));*/
+  background: linear-gradient(rgba(151,195,152,.6), rgba(255,255,255,.6));
 }
 
 h1{
