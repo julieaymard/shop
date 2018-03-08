@@ -19,15 +19,26 @@
 
 <!--<br>-->
 <!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-This is your command of the week :
+<h4>Command of the week :</h4>
 <div id="command">
 
   <div class="box" *ngIf="showHide">
   <ul>
-    <li> client and pick-up date : {{pageService.data}} </li>
-    <li> products choosen: {{pageService.myProducts}}</li>
+    <li> <h5> Client's mail and pick-up date :</h5>
+      {{pageService.data[0]}}
+    <br>
+      <br>
+      {{pageService.data[1]}}
+    </li>
+    <li><h5> List of Products Chosen:</h5>
+      {{pageService.myProducts}}</li>
+    <li><h5> Price to be payed : </h5>
+      {{pageService.ProductsPrice}}</li>
+
   </ul>
-    <button type="button" (click)="changeShowStatus()">Done</button>
+    <button id="done" type="button" (click)="changeShowStatus()">Done</button>
+
+
   </div>
   <!--<input type="checkbox" id="SelectTask" name="OK" value="newsletter"> <label>is Done</label>-->
 
