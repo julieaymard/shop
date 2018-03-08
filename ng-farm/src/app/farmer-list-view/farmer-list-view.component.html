@@ -1,4 +1,62 @@
-<html>
-<h1>Farmer Access</h1>
+<body>
+<h1>Farmer Access <font color="red"> Restricted </font></h1>
 
-</html>
+<h2 id="roland"> ~ Welcome <font color="#006400"> Roland </font> ~ </h2>
+
+<h3> Orders in Progress </h3>
+<div id="clients">
+  <table>
+    <th *ngFor="let client of clients">
+      <a href="#{{client.id}}" (click)="detailsC(client)"> {{client.mail}}
+      </a>
+    </th>
+    <tr>
+      <td *ngFor="let client of clients">
+        <input type="checkbox" id="SelectTask" name="OK" value="newsletter"> <label>Command OK</label>
+      </td>
+    </tr>
+  </table>
+  <ul *ngFor="let product of selectedClient?.products">
+    <li>{{product.name}} ({{product.price}} $/kg)</li>
+  </ul>
+</div>
+
+<h3> Yours Products </h3>
+<div id="products">
+  <table>
+    <tr *ngFor="let product of products">
+      <td> {{product.name}}</td>
+      <td> {{product.price}} $/kg</td>
+    </tr>
+  </table>
+</div>
+<br>
+
+Name*:
+<input type="text" name="productName" placeholder="enter a name" [(ngModel)]="createdProduct.name" aria-required="true"
+       required>
+Price*:
+<input type="number" name="productPrice" placeholder="enter a number" [(ngModel)]="createdProduct.price" required
+       aria-required="true">
+<button (click)="createProduct()" [disabled]="createdProduct.name?.length<2"> +</button>
+<button (click)="deleteProduct()" [disabled]="createdProduct.name?.length<2"> -</button>
+
+
+<h3> Your Availabilities </h3>
+<div id="dates">
+  <ul>
+    <li *ngFor="let date of dates"> {{date.day}} : {{date.open}} - {{date.close}}</li>
+  </ul>
+</div>
+<br>
+
+
+<!--Day*:-->
+<!--<input type="text" name="dateDay" placeholder="enter a day" [(ngModel)]="createdDate.day" required aria-required="true">-->
+<!--Open*:-->
+<!--<input type="text" name="dateOpen" placeholder="00:00" [(ngModel)]="createdDate.open" required aria-required="true">-->
+<!--Close*:-->
+<!--<input type="text" name="dateClose" placeholder="00:00" [(ngModel)]="createdDate.close" required aria-required="true">-->
+<!--<button (click)="createDate()" [disabled]="createdDate.day?.length<2"> + </button>-->
+<!--<button (click)="deleteDate()" [disabled]="createdDate.day?.length<4"> - </button>-->
+</body>

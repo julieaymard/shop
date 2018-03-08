@@ -35,21 +35,41 @@ export class Dataservice {
       .then(data => data as Date[])
   }
 
-
-  ////////
-  addToCart(product: Product) {
-    let url = ('http://localhost:8080/farm-java/api/commend')
-    let dto = {
-      product_id: product.id,
-
-    };
-
-    console.log('sending user:', dto);
-
-    return this.http.post(url, dto)
+  /** Farmer */
+  fetchClientWithProducts(client: Client): Promise<Client> {
+    let url = 'http://localhost:8080/farm-java/api/clients/' + client.id;
+    return this.http
+      .get(url)
       .toPromise()
-      .then(data => console.log('Success :)', data))
-
+      .then(data => {
+        console.log('Client with products: ', data);
+        return data as Client
+      })
 
   }
+
+
+  createProduct(product: Product) {
+    let url = 'http://localhost:8080/farm-java/api/products/';
+
+    let dto = {
+
+      name: product.name,
+      id: product.id,
+      client: null,
+      price: product.price,
+      farmer: {
+        id: 1,
+        name: "Roland"
+      }
+    };
+
+    console.log('Sending product: ', product);
+    // When posting, we send data to url
+    return this.http.post(url, dto)
+      .toPromise()
+      .then(data => console.log('Success :)', data));
+    //.catch(e => console.error('Fail :(', e));
+  }
+
 }
