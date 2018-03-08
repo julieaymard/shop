@@ -37,7 +37,6 @@ export class FarmerListViewComponent implements OnInit {
 
     /*dataService.fetchClientWithProducts(this.selectedClient)
       .then(client => this.selectedClient = client);*/
-
   }
 
 

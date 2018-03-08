@@ -1,7 +1,8 @@
 <html>
-<div  style="text-align: right"><a href="#farmer"> <span (click)="pageService.toggle()">Farmer Access</span></a></div>
 <h1>Client Access</h1>
-
+<button id="toggle"(click)="pageService.toggle()">Farmer Access</button>
+<br>
+<br>
 
   <div id="clients">
     <!--<h3> Client's login</h3>-->
@@ -75,9 +76,9 @@
       <li *ngFor = "let product of selectedOptions()"> {{product.name}} ${{product.price}}  </li>
     </ol>
 
-    <img src="https://www.verts-de-terre.fr/images/large-consigne-panier.png" height="180" width="180"/>
+    <img id="panier" src="https://www.verts-de-terre.fr/images/large-consigne-panier.png" height="180" width="180"/>
     <br>
-    TOTAL : ${{sum()}}
+  <p class="valid">TOTAL : ${{sum()}}</p>
 </div>
 
 <h2> Pick a date </h2>
@@ -108,8 +109,7 @@
         </tr>
       </table>
 <br>
-      <button (click)="validate()"> Validate your order </button>
-
+      <button id="validation" (click)="validate()"> Validate your order </button>
       <br>
       <br>
     </div>
