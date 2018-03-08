@@ -21,6 +21,8 @@ export class FarmerListViewComponent implements OnInit {
   //selectedProduct: Product;
   createdProduct : Product = new Product(); ////////////////////////// ICI
 
+  showHide: boolean;
+
   constructor(public dataService: Dataservice, public pageService : PageService) {
     dataService.fetchClients()
       .then(clients => this.clients = clients)
@@ -37,6 +39,11 @@ export class FarmerListViewComponent implements OnInit {
 
     /*dataService.fetchClientWithProducts(this.selectedClient)
       .then(client => this.selectedClient = client);*/
+    this.showHide = true;
+  }
+
+  changeShowStatus(){
+    this.showHide = !this.showHide;
   }
 
 
