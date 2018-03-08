@@ -43,6 +43,7 @@ export class UserListViewComponent implements OnInit {
     pageService.data = [];
     pageService.myProducts = [];
     pageService.myProductsPrice = [];
+    pageService.myTotalPrice = 0;
   }
 
 
@@ -107,6 +108,7 @@ export class UserListViewComponent implements OnInit {
     }
     console.log("===>" + total);
     ///
+    this.pageService.myTotalPrice = total;
 
     ////////
     return total;

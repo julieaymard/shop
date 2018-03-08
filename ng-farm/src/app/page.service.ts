@@ -8,6 +8,7 @@ export class PageService {
   data:any[]
   myProducts: any[]
   myProductsPrice: any[]
+  myTotalPrice: number;
 
   constructor() { }
 
