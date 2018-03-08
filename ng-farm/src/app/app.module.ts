@@ -8,6 +8,7 @@ import {Dataservice} from "./data-service.service";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {FarmerListViewComponent} from "./farmer-list-view/farmer-list-view.component";
+import {PageService} from "./page.service";
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import {FarmerListViewComponent} from "./farmer-list-view/farmer-list-view.compo
   imports: [
     BrowserModule, HttpClientModule, FormsModule,
   ],
-  providers: [Dataservice],
+  providers: [Dataservice, PageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

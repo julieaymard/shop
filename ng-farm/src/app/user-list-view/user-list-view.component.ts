@@ -4,6 +4,7 @@ import {Dataservice} from "../data-service.service";
 import {Product} from "../model/products";
 import {Date} from "../model/dates";
 import {CheckProduct} from "../model/checkProduct";
+import {PageService} from "../page.service";
 
 @Component({
   selector: 'app-user-list-view',
@@ -19,7 +20,7 @@ export class UserListViewComponent implements OnInit {
   options: CheckProduct[] = [];
   selectedProducts : Product;
 
-  constructor(public dataService: Dataservice) {
+  constructor(public dataService: Dataservice, public pageService: PageService) {
     dataService.fetchClients()
       .then(clients => this.clients = clients)
       .then(clients => console.log('Clients:', clients));
@@ -34,6 +35,9 @@ export class UserListViewComponent implements OnInit {
     dataService.fetchDates()
       .then(dates => this.dates = dates)
       .then(dates => console.log('Dates:', dates));
+
+
+    pageService.data = 'I am some stupid data'
   }
 
 
