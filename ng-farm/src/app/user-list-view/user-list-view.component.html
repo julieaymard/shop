@@ -67,55 +67,48 @@
 </div>
 </ul>
 
-
+<div id="#bb">
 <h2>Your Basket</h2>
 
     <ol>
-      <li *ngFor = "let product of selectedOptions()"> {{product.name}}  </li>
+      <li *ngFor = "let product of selectedOptions()"> {{product.name}} {{product.price}}$  </li>
     </ol>
 
     <img src="https://www.verts-de-terre.fr/images/large-consigne-panier.png" height="180" width="180"/>
     <br>
-    ///// TOTAL /////
-
+    TOTAL : {{sum()}} $
+</div>
 
 <h2> Pick a date </h2>
 <select [(ngModel)]="selectedDate" name="level">
   <option selected = "selected">Available Dates</option>
   <option *ngFor = "let date of dates"> {{date.day}} : {{date.open}} - {{date.close}}</option>
 </select>
-<br>
-<br>
-<div id="selectedDate">
-  Your Pick Up Date <!-- and Price to be payed-->
-  <h4>  {{selectedDate}}</h4>
-</div>
-<br>
     <br>
-    <br>
-    <br><br>
 
 
-  <!--<button (click)="validate()"> validate your order </button>-->
 
     <h2> Summary </h2>
     <div id="summary">
-      Your email :
-{{selectedClient}}
+      <table>
+        <th> Your email </th>
+        <th> Your Shopping List </th>
+        <th> Total Price </th>
+        <th> Pick Up Time </th>
+        <tr>
+          <td>{{selectedClient}}</td>
+          <td>
+            <ol>
+            <li *ngFor = "let product of selectedOptions()"> {{product.name}}  </li>
+          </ol>
+          </td>
+          <td> {{sum()}} $  </td>
+          <td> {{selectedDate}}</td>
+        </tr>
+      </table>
 
-
-<br>
-      <br>
-      Your shopping list :
-      <ol>
-      <li *ngFor = "let product of selectedOptions()"> {{product.name}}  </li>
-      </ol>
-      Total price :
-      <br>
-      <br>
-      Your pick up time :   {{selectedDate}}
+      <button (click)="validate()"> validate your order </button>
     </div>
-
 </div>
 
 <div id="contact">

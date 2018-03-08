@@ -32,7 +32,9 @@ h1{
   color: black;
 
 }
-
+ol {
+  list-style: none;
+}
 
 ul {
   list-style: none;
@@ -66,7 +68,7 @@ select{
  }
 
 #basket{
- float:right;
+;
 }
 #courses{
   display: inline-block;
@@ -75,3 +77,22 @@ select{
 html{
   background: linear-gradient(rgba(114,169,100,.6), rgba(255,255,255,.6));
 }
+
+table{
+  text-align: center;
+  border : solid;
+  margin: auto;
+  justify-content: center;
+
+}
+
+td {
+
+  border-color: rgba(114,169,100,.6);
+  width: 250px;
+}
+
+button {
+  horiz-align : center;
+}
+

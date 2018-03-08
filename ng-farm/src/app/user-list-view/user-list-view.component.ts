@@ -66,5 +66,21 @@ export class UserListViewComponent implements OnInit {
     console.log(this.options)
   }
 
+  sum(): number {
+    let total = 0;
+
+    for (let i = 0; i < this.options.length; i++) {
+
+      let product = this.options[i];
+      if(this.options[i].checked==true){
+        console.log("===>" +product);
+        total += product.product.price ;
+      }
+    }
+    console.log("===>" + total);
+
+    return total;
+
+  }
 
 }

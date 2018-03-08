@@ -21,7 +21,7 @@
   </ul>
 </div>
 
-<h3> Yours Products </h3>
+<h3> Your Products </h3>
 <div id="products">
   <table>
     <tr *ngFor="let product of products">
@@ -33,7 +33,7 @@
 <br>
 
 Name*:
-<input type="text" name="productName" placeholder="enter a name" [(ngModel)]="createdProduct.name" aria-required="true"
+<input type="text" name="productName" placeholder="enter a product" [(ngModel)]="createdProduct.name" aria-required="true"
        required>
 Price*:
 <input type="number" name="productPrice" placeholder="enter a number" [(ngModel)]="createdProduct.price" required
