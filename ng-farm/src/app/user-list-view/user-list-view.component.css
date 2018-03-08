@@ -42,9 +42,12 @@ ul {
 }
 
 button {
-  background-color :lightgray;
+  background-color :rgba(114,169,100,.6);
   border-radius: 12px;
   position: center;
+  position: absolute;
+  left: 46%;
+  text-align: center;
 }
 
 button:hover {
@@ -92,7 +95,4 @@ td {
   width: 250px;
 }
 
-button {
-  horiz-align : center;
-}
 
