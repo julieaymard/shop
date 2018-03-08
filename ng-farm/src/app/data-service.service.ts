@@ -72,4 +72,17 @@ export class Dataservice {
     //.catch(e => console.error('Fail :(', e));
   }
 
+  deleteProduct(product: Product) {
+    let url = 'http://localhost:8080/farm-java/api/products/' + product.id;
+
+    console.log('Sending product: ', product);
+    // When posting, we send data to url
+    return this.http.delete(url)
+      .toPromise()
+      .then(data => console.log('Success :)', data));
+    //.catch(e => console.error('Fail :(', e));
+  }
+
+
+
 }

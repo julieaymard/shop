@@ -74,12 +74,16 @@ export class FarmerListViewComponent implements OnInit {
   }
 
 
-  deleteProduct() {
-    //
-    //  this.dataService.deleteProduct(this.createdProduct)
-    //    .then(()=>this.products.push(
-    //      Object.assign({}, this.createdProduct)))
-    //    .catch(e => alert(e.message));
+  deleteProduct(product: Product) {
+    const index: number = this.products.indexOf(product);
+    if (index !== -1) {
+      this.products.splice(index, 1);
+    }
+
+     /*this.dataService.deleteProduct(this.createdProduct)
+       .then(()=>this.products.push(
+         Object.assign({}, this.createdProduct)))
+       .catch(e => alert(e.message));*/
 
   }
 

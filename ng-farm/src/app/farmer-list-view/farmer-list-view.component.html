@@ -71,7 +71,7 @@
   <table>
     <tr *ngFor="let product of products">
       <td> {{product.name}} ${{product.price}}</td>
-      <td> <button id="minus" (click)="deleteProduct()" [disabled]="createdProduct.name?.length<2"> - </button> </td>
+      <td> <button id="minus" (click)="deleteProduct(product)"> - </button> </td>
     </tr>
   </table>
 
