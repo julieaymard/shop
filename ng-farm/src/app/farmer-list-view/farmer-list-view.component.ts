@@ -4,6 +4,7 @@ import {Dataservice} from "../data-service.service";
 import {Product} from "../model/products";
 import {Date} from "../model/dates";
 import {Farmer} from "../model/farmer";
+import {PageService} from "../page.service";
 
 @Component({
   selector: 'app-farmer-list-view',
@@ -20,7 +21,7 @@ export class FarmerListViewComponent implements OnInit {
   //selectedProduct: Product;
   createdProduct : Product = new Product(); ////////////////////////// ICI
 
-  constructor(public dataService: Dataservice) {
+  constructor(public dataService: Dataservice, public pageService : PageService) {
     dataService.fetchClients()
       .then(clients => this.clients = clients)
 
@@ -36,6 +37,7 @@ export class FarmerListViewComponent implements OnInit {
 
     /*dataService.fetchClientWithProducts(this.selectedClient)
       .then(client => this.selectedClient = client);*/
+
   }
 
 

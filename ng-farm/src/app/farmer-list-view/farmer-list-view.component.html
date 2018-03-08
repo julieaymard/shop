@@ -12,7 +12,7 @@
     </th>
     <tr>
       <td *ngFor="let client of clients">
-        <input type="checkbox" id="SelectTask" name="OK" value="newsletter"> <label>Command OK</label>
+        <input type="checkbox" id="SelectTask" name="OK" value="newsletter"> <label>is Done</label>
       </td>
     </tr>
   </table>
@@ -49,6 +49,11 @@ Price*:
   </ul>
 </div>
 <br>
+<!--<div *ngFor="let o of pageService.data">-->
+  <!--{{o.selectedDate}} :: {{o.selectedClient}}-->
+<!--</div>-->
+
+{{pageService.data}} :: {{pageService.myProducts}}
 
 
 <!--Day*:-->

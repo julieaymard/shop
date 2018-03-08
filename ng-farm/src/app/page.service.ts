@@ -5,7 +5,9 @@ export class PageService {
 
   page='client';
 
-  data:any
+  data:any[]
+
+  myProducts: any[]
 
   constructor() { }
 
