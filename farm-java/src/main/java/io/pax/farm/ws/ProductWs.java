@@ -45,6 +45,18 @@ public class ProductWs {
 
             throw new ServerErrorException("Database error, sorry", 500);
         }
+    }
+
+    @DELETE
+    @Path("/{id}")
+    //@Produces(MediaType.APPLICATION_XML)
+    public int deleteProduct(@PathParam("id") int id) throws SQLException {
+        ProductDao dao = new ProductDao();
+        dao.deleteProduct(id);
+        return id;
+
 
     }
+
+
 }

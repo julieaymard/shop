@@ -42,6 +42,7 @@ export class UserListViewComponent implements OnInit {
     //pageService.data = 'I am some stupid data'
     pageService.data = [];
     pageService.myProducts = [];
+    pageService.myProductsPrice = [];
   }
 
 
@@ -75,9 +76,9 @@ export class UserListViewComponent implements OnInit {
 
 
     for (let i = 0; i < selectedProducts.length; i++) {
-
       console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ' + selectedProducts[i].name.length);
       this.pageService.myProducts[i]  = selectedProducts[i].name;
+      this.pageService.myProductsPrice[i] = selectedProducts[i].price;
 
     }
        this.pageService.data = [this.selectedClient, this.selectedDate];
