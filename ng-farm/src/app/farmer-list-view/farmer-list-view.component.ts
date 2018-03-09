@@ -85,6 +85,20 @@ export class FarmerListViewComponent implements OnInit {
 
   }
 
+  createDate() {
+    this.dataService.createDate(this.createdDate)
+      .then(() => this.dates.push(
+        Object.assign({}, this.createdDate)))
+      .catch(e => alert(e.message));
+  }
+
+  deleteDate(date: Date) {
+    const index: number = this.dates.indexOf(date);
+    if (index !== -1) {
+      this.dates.splice(index, 1);
+    }
+  }
+
   // createDate() {
   //   /*this.dataService.createDate(this.createdDate)
   //     .then(()=>this.products.push(

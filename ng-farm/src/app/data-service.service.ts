@@ -84,5 +84,34 @@ export class Dataservice {
   }
 
 
+  createDate(date: Date) {
+    let url = 'http://localhost:8080/farm-java/api/dates/';
 
+    let dto = {
+      id: date.id,
+      day: date.day,
+      open: date.open,
+      close: date.close,
+
+    };
+    console.log('Sending product: ', date);
+    // When posting, we send data to url
+    return this.http.post(url, dto)
+      .toPromise()
+      .then(data => console.log('Success :)', data));
+    //.catch(e => console.error('Fail :(', e));
+
+  }
+
+
+  deleteDate(date: Date) {
+    let url = 'http://localhost:8080/farm-java/api/dates/' + date.id;
+
+    console.log('Sending product: ', date);
+    // When posting, we send data to url
+    return this.http.delete(url)
+      .toPromise()
+      .then(data => console.log('Success :)', data));
+    //.catch(e => console.error('Fail :(', e));
+  }
 }

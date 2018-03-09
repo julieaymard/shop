@@ -3,10 +3,7 @@ package io.pax.farm.dao;
 import io.pax.farm.domain.Date;
 import io.pax.farm.domain.jdbc.SimpleDate;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,11 +33,50 @@ public class DateDao {
 
         return dates;
     }
+    public int createDate(String day, String open, String close) throws SQLException {
+        String query = "INSERT INTO date (day, open, close) VALUES (?,?,?)";
+        System.out.println(query);
+
+        Connection conn = this.connector.getConnection();
+        PreparedStatement statement = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+        statement.setString(1, day);
+        statement.setString(2, open);
+        statement.setString(3, close);
+
+        statement.executeUpdate();
+
+        ResultSet keys = statement.getGeneratedKeys();
+        keys.next();
+
+        int id = keys.getInt(1);
+
+        statement.close();
+        conn.close();
+
+        return id;
+    }
+
+    public int deleteDate(int dateId) throws SQLException {
+
+        String query = "DELETE  FROM date WHERE id=?";
+        //System.out.println(query);
+
+
+        Connection conn = this.connector.getConnection();
+        PreparedStatement statement = conn.prepareStatement(query);
+        statement.setInt(1,dateId);
+        statement.executeUpdate();
+        statement.close();
+        conn.close();
+
+        return dateId;
+    }
+
 
     public static void main(String[] args) throws SQLException {
         DateDao dao = new DateDao();
         System.out.println( dao.listDates());
-
-
+        //dao.createDate("myDay", "myOpenning", "myClosing");
+        //dao.deleteDate(6);
     }
 }
