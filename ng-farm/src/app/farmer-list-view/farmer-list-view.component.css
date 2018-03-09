@@ -85,6 +85,11 @@ button:hover {
   color: black;
 }
 
+#minusDate{
+  background-color : red;
+  color: black;
+}
+
 #plus{
   color: black;
 }

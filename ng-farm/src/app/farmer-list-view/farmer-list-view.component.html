@@ -90,10 +90,12 @@ Price*:
 
 <h3> Your Availabilities </h3>
 <div id="dates">
-  <ul *ngFor="let date of dates">
-    <li> {{date.day}} : {{date.open}} - {{date.close}} <button id="minusDate" (click)="deleteDate(date)"> - </button> </li>
-    <li>  </li>
-  </ul>
+  <table>
+  <tr *ngFor="let date of dates">
+    <td> {{date.day}} : {{date.open}} - {{date.close}}</td> <td><button id="minusDate" (click)="deleteDate(date)"> - </button> </td>
+
+  </tr>
+  </table>
   Day*:
   <input type="text" name="dateDay" placeholder="enter a day" [(ngModel)]="createdDate.day" required aria-required="true">
   Open*:
