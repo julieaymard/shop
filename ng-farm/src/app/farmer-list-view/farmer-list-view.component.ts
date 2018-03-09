@@ -5,6 +5,7 @@ import {Product} from "../model/products";
 import {Date} from "../model/dates";
 import {Farmer} from "../model/farmer";
 import {PageService} from "../page.service";
+import {_document} from "@angular/platform-browser/src/browser";
 
 @Component({
   selector: 'app-farmer-list-view',
@@ -67,9 +68,11 @@ export class FarmerListViewComponent implements OnInit {
   }
 
   createProduct() {
+
     this.dataService.createProduct(this.createdProduct)
       .then(()=>this.products.push(
         Object.assign({}, this.createdProduct)))
+      .then(()=> this.clearFields())
       .catch(e => alert(e.message));
   }
 
@@ -89,6 +92,7 @@ export class FarmerListViewComponent implements OnInit {
     this.dataService.createDate(this.createdDate)
       .then(() => this.dates.push(
         Object.assign({}, this.createdDate)))
+      .then(()=> this.clearFields())
       .catch(e => alert(e.message));
   }
 
@@ -100,6 +104,12 @@ export class FarmerListViewComponent implements OnInit {
 
     this.dataService.deleteDate(date)
       .catch(e => alert(e.message));
+  }
+
+  clearFields() {
+    this.createdDate = new Date();
+    this.createdProduct = new Product();
+    //document.getElementById("textfield2").value = "";
   }
 
   // createDate() {
