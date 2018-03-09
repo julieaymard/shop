@@ -5,13 +5,16 @@
 <br>
 <br>
 
-  <div id="clients">
+  <div >
     <!--<h3> Client's login</h3>-->
    Select your email <br>
-    <select [(ngModel)]="selectedClient" name="Clients">
-      <option selected = "selected">Clients</option>
+    <select   id="clients" [(ngModel)]="selectedClient" name="Clients">
+      <!--<option selected = "selected">Clients</option>-->
+<option value ="" hidden >Clients</option>
       <option *ngFor = "let client of clients"> {{client.mail}}</option>
+
     </select>
+
   </div>
 
 <!--<label for="clients">Enter your email address </label>-->
@@ -84,12 +87,15 @@
 
 <h2> Pick a date </h2>
 
-<select [(ngModel)]="selectedDate" name="level">
-  <optgroup label="Available Dates">
+<select [(ngModel)]="selectedDate" required>
+  <optgroup label="Available Dates"> Available Dates
   <option *ngFor = "let date of dates"> {{date.day}} : {{date.open}} - {{date.close}}</option>
   </optgroup>
 </select>
+
+
 </div>
+
 
     <h2> Summary </h2>
     <div id="summary">
