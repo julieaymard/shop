@@ -80,10 +80,8 @@ export class FarmerListViewComponent implements OnInit {
       this.products.splice(index, 1);
     }
 
-     /*this.dataService.deleteProduct(this.createdProduct)
-       .then(()=>this.products.push(
-         Object.assign({}, this.createdProduct)))
-       .catch(e => alert(e.message));*/
+     this.dataService.deleteProduct(product)
+       .catch(e => alert(e.message));
 
   }
 
