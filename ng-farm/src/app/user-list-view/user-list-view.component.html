@@ -95,7 +95,7 @@
   <select [(ngModel)]="selectedDate" required>
     <option value="undefined" disabled selected hidden>Available Dates</option>
     <option value="null" disabled selected hidden>Available Dates</option>
-      <option *ngFor = "let date of dates">{{date.day}} : {{date.open}} - {{date.close}}</option>
+    <option *ngFor = "let date of dates">{{date.day}} : {{date.open}} - {{date.close}}</option>
   </select>
 </div>
 

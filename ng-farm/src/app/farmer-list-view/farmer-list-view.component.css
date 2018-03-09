@@ -94,12 +94,20 @@ button:hover {
   color: black;
 }
 
- button:hover.done{
+button:hover.done{
   background-color: antiquewhite;
    color: black
 }
 .done {
   color: white;
   background-color: tomato;
+}
+
+#minus:hover{
+  background-color: antiquewhite;
+}
+
+#minusDate:hover{
+  background-color: antiquewhite;
 }
 
