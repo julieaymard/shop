@@ -97,6 +97,9 @@ export class FarmerListViewComponent implements OnInit {
     if (index !== -1) {
       this.dates.splice(index, 1);
     }
+
+    this.dataService.deleteDate(date)
+      .catch(e => alert(e.message));
   }
 
   // createDate() {
