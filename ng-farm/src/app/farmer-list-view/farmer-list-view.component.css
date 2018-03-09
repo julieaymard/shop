@@ -78,7 +78,7 @@ button:hover {
 }
 
 #products {
-  column-count: 4;
+  column-count: 2;
 }
 
 #minus{
@@ -118,6 +118,7 @@ button:hover.done{
   background-color: antiquewhite;
    color: black
 }
+
 
 #minus:hover{
   background-color: antiquewhite;
