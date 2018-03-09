@@ -86,13 +86,11 @@
 
 
 <h2> Pick a date </h2>
-
 <select [(ngModel)]="selectedDate" required>
   <optgroup label="Available Dates"> Available Dates
   <option *ngFor = "let date of dates"> {{date.day}} : {{date.open}} - {{date.close}}</option>
   </optgroup>
 </select>
-
 
 </div>
 
