@@ -92,7 +92,17 @@ Price*:
 <div id="dates">
   <ul>
     <li *ngFor="let date of dates"> {{date.day}} : {{date.open}} - {{date.close}}</li>
+    <!--<li> <button (click)="deleteDate()" [disabled]="createdDate.day?.length<4"> - </button> </li>-->
+
   </ul>
+  Day*:
+  <input type="text" name="dateDay" placeholder="enter a day" [(ngModel)]="createdDate.day" required aria-required="true">
+  Open*:
+  <input type="text" name="dateOpen" placeholder="00:00" [(ngModel)]="createdDate.open" required aria-required="true">
+  Close*:
+  <input type="text" name="dateClose" placeholder="00:00" [(ngModel)]="createdDate.close" required aria-required="true">
+  <button (click)="createDate()"> + </button>
+
 </div>
 <br>
 <!--<div *ngFor="let o of pageService.data">-->
