@@ -4,7 +4,7 @@
 
 
 <h1>Farmer Access <font color="red"> Restricted </font></h1>
-<button id="#farmer" (click)="pageService.toggle()">Return</button>
+<button id="farmer" (click)="pageService.toggle()">Return</button>
 <h2 id="roland"> ~ Welcome <font color="#006400"> Roland </font> ~ </h2>
 
 <h3> Orders in Progress </h3>
@@ -102,7 +102,7 @@ Price*:
   <input type="text" name="dateOpen" placeholder="00:00" [(ngModel)]="createdDate.open" required aria-required="true">
   Close*:
   <input type="text" name="dateClose" placeholder="00:00" [(ngModel)]="createdDate.close" required aria-required="true">
-  <button (click)="createDate()"> + </button>
+  <button id="plusDate" (click)="createDate()"> + </button>
 
 </div>
 <br>
