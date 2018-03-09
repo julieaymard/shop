@@ -15,7 +15,7 @@ import {PageService} from "./page.service";
   declarations: [
     AppComponent,
     UserListViewComponent,
-    FarmerListViewComponent
+    FarmerListViewComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule,
